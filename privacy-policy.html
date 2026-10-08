@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOZ Mobile — Chính sách riêng tư</title>
+<style>
+  :root{
+    --bg:#f6f7fa; --surface:#ffffff; --surface-alt:#eef1f6; --border:#dee2e8;
+    --ink:#161b22; --text:#3a4350; --text-muted:#6b7480;
+    --accent:#2451d6; --accent-ink:#163a9e; --accent-soft:#e7edfc; --good:#1f8a5f; --mono-bg:#f1f3f7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1319; --surface:#161b22; --surface-alt:#1d242d; --border:#2a323d;
+      --ink:#edeff3; --text:#c6ccd6; --text-muted:#8990a0;
+      --accent:#7b9cff; --accent-ink:#a9bfff; --accent-soft:#1d2a4a; --good:#4fbe8d; --mono-bg:#1a2029;
+    }
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:Georgia,"Times New Roman",serif;color:var(--ink);margin:0;}
+  .page{max-width:760px;margin:0 auto;padding:56px 24px 96px;}
+  .eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:14px;}
+  h1{font-size:clamp(2rem,4vw,2.6rem);font-weight:700;line-height:1.15;}
+  .meta{margin-top:14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:var(--text-muted);}
+  .lede{margin-top:20px;font-size:1.05rem;max-width:64ch;}
+  .summary-bar{margin:28px 0 0;background:var(--surface);border:1px solid var(--border);
+    border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 20px;}
+  .summary-item{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;}
+  .summary-icon{flex:none;width:18px;height:18px;border-radius:50%;background:var(--good);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;}
+  nav.toc{margin-top:40px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;}
+  .toc-label{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;}
+  nav.toc ol{margin:0;padding-left:1.4em;columns:2;column-gap:28px;font-size:14px;}
+  nav.toc a{color:var(--accent-ink);text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline;}
+  main{counter-reset:section;margin-top:24px;}
+  section{padding:34px 0;border-top:1px solid var(--border);scroll-margin-top:20px;}
+  section:first-child{border-top:none;}
+  h2{counter-increment:section;font-size:1.35rem;font-weight:600;display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  h2::before{content:counter(section);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;
+    font-weight:500;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 8px;flex:none;}
+  p{margin:0 0 14px;max-width:65ch;}
+  p:last-child{margin-bottom:0;}
+  ul{margin:0 0 14px;padding-left:1.3em;max-width:63ch;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);font-weight:600;}
+  a{color:var(--accent-ink);}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;background:var(--mono-bg);
+    border:1px solid var(--border);border-radius:4px;padding:.1em .4em;}
+  .flow-targets{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0;}
+  .flow-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;}
+  .flow-name{font-weight:600;color:var(--ink);font-size:14.5px;margin-bottom:4px;}
+  .flow-cond{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+    padding:2px 7px;border-radius:5px;margin-bottom:8px;}
+  .flow-cond.always{background:var(--accent-soft);color:var(--accent-ink);}
+  .flow-cond.optional{background:var(--surface-alt);color:var(--text-muted);}
+  .flow-cond.off{background:var(--surface-alt);color:var(--good);}
+  .flow-card p{font-size:13.5px;margin:0;max-width:none;}
+  .table-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--border);border-radius:12px;}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;}
+  th,td{text-align:left;padding:10px 14px;vertical-align:top;}
+  th{background:var(--surface-alt);font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);}
+  td{border-top:1px solid var(--border);}
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;font-size:14.5px;}
+  .callout p{margin:0;max-width:none;}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:ui-monospace,Menlo,Consolas,monospace;}
+  @media (max-width:560px){
+    .summary-bar{grid-template-columns:1fr;}
+    nav.toc ol{columns:1;}
+    .page{padding:36px 16px 64px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">VOZ Mobile · Tài liệu pháp lý</div>
+    <h1>Chính sách riêng tư</h1>
+    <div class="meta">Có hiệu lực từ 03/09/2026 · Cập nhật 08/10/2026 · Áp dụng cho bản Android &amp; iOS</div>
+    <p class="lede">VOZ Mobile (nhà phát triển: <strong>Tuong Lam Photos</strong>) là ứng dụng <strong>không chính thức</strong>,
+      do một lập trình viên độc lập viết ra để đọc và tham gia diễn đàn
+      <a href="https://voz.vn" target="_blank" rel="noopener">voz.vn</a> thuận tiện hơn trên điện thoại.
+      Ứng dụng không thuộc sở hữu và không được ban quản trị voz.vn bảo trợ.
+      Trang này giải thích ứng dụng xử lý dữ liệu gì, lưu ở đâu, và khi nào thì dữ liệu đó rời khỏi máy bạn.</p>
+  </header>
+
+  <div class="summary-bar" aria-label="Tóm tắt nhanh">
+    <div class="summary-item"><span class="summary-icon">&#10003;</span><span>Ứng dụng không có máy chủ riêng thu thập dữ liệu của bạn</span></div>
+    <div class="summary-item"><span class="summary-icon">&#10003;</span><span>Không cài SDK quảng cáo hay theo dõi hành vi của bên thứ ba</span></div>
+    <div class="summary-item"><span class="summary-icon">&#10003;</span><span>Mật khẩu voz.vn không bao giờ được lưu lại, kể cả trong bộ nhớ mã hoá</span></div>
+    <div class="summary-item"><span class="summary-icon">&#10003;</span><span>Gỡ ứng dụng hoặc đăng xuất là xoá sạch dữ liệu cục bộ trên máy</span></div>
+  </div>
+
+  <nav class="toc" aria-label="Mục lục">
+    <div class="toc-label">Mục lục</div>
+    <ol>
+      <li><a href="#pham-vi">Phạm vi áp dụng</a></li>
+      <li><a href="#khong-thu-thap">Dữ liệu không thu thập</a></li>
+      <li><a href="#luu-cuc-bo">Lưu cục bộ trên máy bạn</a></li>
+      <li><a href="#ben-thu-ba">Nơi dữ liệu gửi tới</a></li>
+      <li><a href="#quyen-thiet-bi">Quyền truy cập thiết bị</a></li>
+      <li><a href="#tre-em">Trẻ em</a></li>
+      <li><a href="#bao-mat">Bảo mật</a></li>
+      <li><a href="#xoa-du-lieu">Xoá dữ liệu của bạn</a></li>
+      <li><a href="#thay-doi">Thay đổi chính sách</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="pham-vi">
+      <h2>Phạm vi áp dụng</h2>
+      <p>Chính sách này áp dụng cho ứng dụng di động <strong>VOZ Mobile</strong> trên Android và iOS.
+        Ứng dụng hoạt động như một trình duyệt thu gọn cho voz.vn: mọi nội dung bạn đọc (chủ đề, bài viết,
+        hình ảnh, tin nhắn riêng) đều lấy trực tiếp từ voz.vn bằng chính tài khoản của bạn, giống hệt khi
+        bạn mở voz.vn bằng Chrome hay Safari.</p>
+      <p>Nội dung hiển thị trong ứng dụng do thành viên voz.vn đăng tải và thuộc sở hữu của voz.vn cùng các
+        thành viên đó — ứng dụng chỉ hiển thị lại, không kiểm duyệt và không có quyền chỉnh sửa nội dung.
+        Việc voz.vn xử lý dữ liệu tài khoản của bạn nằm ngoài phạm vi tài liệu này; vui lòng tham khảo
+        điều khoản sử dụng của chính voz.vn.</p>
+    </section>
+
+    <section id="khong-thu-thap">
+      <h2>Dữ liệu không thu thập</h2>
+      <p>Ứng dụng <strong>không vận hành máy chủ riêng</strong> nào để lưu trữ dữ liệu người dùng. Cụ thể:</p>
+      <ul>
+        <li>Không có công cụ phân tích hành vi (analytics), không đo lường quảng cáo, không SDK theo dõi
+          của bên thứ ba nào được nhúng vào ứng dụng.</li>
+        <li>Không thu thập danh bạ, vị trí, lịch sử cuộc gọi hay bất kỳ dữ liệu nào ngoài phạm vi cần thiết
+          để hiển thị diễn đàn.</li>
+        <li>Mật khẩu tài khoản voz.vn của bạn <strong>không bao giờ được lưu lại</strong> ở bất kỳ đâu, kể
+          cả trong bộ nhớ mã hoá của thiết bị — phiên đăng nhập hoạt động hoàn toàn bằng cookie phiên
+          (<code>xf_user</code>) do chính voz.vn cấp, y hệt cách trình duyệt ghi nhớ đăng nhập.</li>
+      </ul>
+    </section>
+
+    <section id="luu-cuc-bo">
+      <h2>Lưu cục bộ trên máy bạn</h2>
+      <p>Một số dữ liệu được lưu <strong>trong bộ nhớ riêng của ứng dụng trên chính điện thoại bạn</strong>,
+        không đồng bộ lên bất kỳ máy chủ nào của nhà phát triển:</p>
+      <ul>
+        <li><strong>Cookie phiên đăng nhập</strong> — để bạn không phải đăng nhập lại mỗi lần mở app. Đổi
+          tài khoản trong app chỉ là chuyển sang một bộ cookie khác đã lưu sẵn.</li>
+        <li><strong>Bản lưu tạm (cache) các trang đã xem</strong> — để mở lại nhanh hơn và đọc được khi mất
+          mạng. Tự động hết hạn và giới hạn dung lượng, xoá được bất cứ lúc nào.</li>
+        <li><strong>Lịch sử đọc và chủ đề đã lưu</strong> — do bạn tạo ra khi dùng app, chỉ hiển thị cho
+          chính bạn.</li>
+        <li><strong>Cài đặt cá nhân</strong> — cỡ chữ, giao diện sáng/tối, và khoá API imgbb nếu bạn tự
+          nhập khoá riêng (mục 4).</li>
+      </ul>
+      <p>Gỡ cài đặt ứng dụng sẽ xoá toàn bộ dữ liệu này ngay lập tức.</p>
+    </section>
+
+    <section id="ben-thu-ba">
+      <h2>Nơi dữ liệu gửi tới</h2>
+      <p>Ứng dụng chỉ nói chuyện với ba điểm đến sau, không có trạm trung gian nào khác:</p>
+
+      <div class="flow-targets">
+        <div class="flow-card">
+          <span class="flow-cond always">Luôn luôn</span>
+          <div class="flow-name">voz.vn</div>
+          <p>Mọi yêu cầu đọc bài, đăng nhập, trả lời, thả tim, nhắn tin, đổi ảnh đại diện — gửi thẳng đến
+            voz.vn bằng chính tài khoản của bạn.</p>
+        </div>
+        <div class="flow-card">
+          <span class="flow-cond optional">Khi bạn đăng ảnh</span>
+          <div class="flow-name">imgbb.com</div>
+          <p>Ảnh bạn chọn tải lên khi soạn bài. Mặc định dùng chung một khoá API do nhà phát triển cấp
+            sẵn để bạn dùng ngay; bạn đổi được sang khoá riêng trong Cài đặt.</p>
+        </div>
+        <div class="flow-card">
+          <span class="flow-cond off">Mặc định TẮT</span>
+          <div class="flow-name">Firebase Cloud Messaging</div>
+          <p>Chỉ hoạt động nếu nhà phát triển bật thêm thông báo đẩy thời gian thực trong bản dựng của
+            bạn. Thông báo cục bộ (bài mới, tin nhắn mới) không cần dịch vụ này.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>Ảnh tải lên qua imgbb có thể được xem bởi bất kỳ ai có đường link ảnh đó, theo cơ chế lưu trữ
+          công khai của imgbb — đừng đăng ảnh riêng tư hoặc nhạy cảm qua tính năng này.</p>
+      </div>
+    </section>
+
+    <section id="quyen-thiet-bi">
+      <h2>Quyền truy cập thiết bị</h2>
+      <p>Trên Android, ứng dụng xin các quyền hệ thống sau — chỉ dùng đúng mục đích liệt kê, không dùng cho
+        việc khác:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Quyền</th><th>Dùng để làm gì</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>INTERNET</code><br><code>ACCESS_NETWORK_STATE</code></td>
+              <td>Tải nội dung từ voz.vn và kiểm tra tình trạng kết nối để quyết định dùng bản lưu tạm hay
+                tải mới.</td>
+            </tr>
+            <tr>
+              <td><code>POST_NOTIFICATIONS</code></td>
+              <td>Hiện thông báo cục bộ khi có phản hồi hoặc tin nhắn mới.</td>
+            </tr>
+            <tr>
+              <td><code>RECEIVE_BOOT_COMPLETED</code><br><code>WAKE_LOCK</code></td>
+              <td>Cho tác vụ nền kiểm tra thông báo định kỳ tiếp tục chạy sau khi khởi động lại máy.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Ứng dụng không xin quyền đọc thư viện ảnh hay video.</strong> Khi bạn chọn ảnh để đăng bài hoặc
+        đổi ảnh đại diện, ứng dụng dùng <strong>trình chọn ảnh của hệ thống Android (system photo picker)</strong>:
+        bạn tự chọn đúng tấm ảnh muốn gửi, và ứng dụng chỉ nhận được tấm ảnh đó — không thấy phần còn lại của
+        thư viện.</p>
+    </section>
+
+    <section id="tre-em">
+      <h2>Trẻ em</h2>
+      <p>Ứng dụng không có cơ chế xác minh độ tuổi. Nội dung trên voz.vn do thành viên tự đăng, không được
+        kiểm duyệt trước khi hiển thị, và có thể không phù hợp với trẻ em. Ứng dụng không hướng đến và
+        không dành cho người dùng dưới 13 tuổi.</p>
+    </section>
+
+    <section id="bao-mat">
+      <h2>Bảo mật</h2>
+      <p>Mọi kết nối tới voz.vn, imgbb.com và Firebase đều qua HTTPS. Phiên đăng nhập dựa trên cookie do
+        chính voz.vn cấp và hết hạn theo đúng quy định của voz.vn — khi cookie hết hạn, ứng dụng báo và
+        mời bạn đăng nhập lại, không tự lưu hay đoán lại mật khẩu.</p>
+    </section>
+
+    <section id="xoa-du-lieu">
+      <h2>Xoá dữ liệu của bạn</h2>
+      <p>Bạn toàn quyền xoá dữ liệu cục bộ bất cứ lúc nào, ngay trong ứng dụng:</p>
+      <ul>
+        <li><strong>Cài đặt → Xoá bộ nhớ đệm</strong> — xoá toàn bộ trang đã lưu tạm.</li>
+        <li><strong>Thư viện → Xoá lịch sử</strong> — xoá lịch sử đọc.</li>
+        <li><strong>Đăng xuất</strong> — xoá cookie phiên của tài khoản đó khỏi máy.</li>
+        <li><strong>Gỡ cài đặt ứng dụng</strong> — xoá sạch mọi dữ liệu cục bộ còn lại, không để sót gì.</li>
+      </ul>
+      <p>Vì nội dung bài viết, tin nhắn và thông tin tài khoản của bạn nằm trên hệ thống của voz.vn (không
+        phải trên máy chủ của ứng dụng), muốn xoá những dữ liệu đó thì cần liên hệ trực tiếp voz.vn.</p>
+    </section>
+
+    <section id="thay-doi">
+      <h2>Thay đổi chính sách</h2>
+      <p>Khi ứng dụng có thêm tính năng xử lý dữ liệu theo cách mới, trang này sẽ được cập nhật và ngày
+        "Cập nhật" ở đầu trang sẽ đổi theo. Bạn nên xem lại trang này sau mỗi lần cập nhật ứng dụng
+        có ghi chú liên quan đến dữ liệu hoặc quyền riêng tư.</p>
+    </section>
+
+    <section id="lien-he">
+      <h2>Liên hệ</h2>
+      <p>Có câu hỏi về chính sách này, hoặc muốn báo lỗi/góp ý cho ứng dụng, vui lòng liên hệ:</p>
+      <p><a href="mailto:trantuonglam@gmail.com">trantuonglam@gmail.com</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>VOZ Mobile — ứng dụng không chính thức, không liên kết với ban quản trị voz.vn</span>
+    <span>Cập nhật 08/10/2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

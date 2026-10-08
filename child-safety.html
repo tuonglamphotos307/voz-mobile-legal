@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOZ Mobile — Child Safety Standards</title>
+<style>
+  :root{
+    --bg:#f6f7fa; --surface:#ffffff; --surface-alt:#eef1f6; --border:#dee2e8;
+    --ink:#161b22; --text:#3a4350; --text-muted:#6b7480;
+    --accent:#2451d6; --accent-ink:#163a9e; --accent-soft:#e7edfc; --good:#1f8a5f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1319; --surface:#161b22; --surface-alt:#1d242d; --border:#2a323d;
+      --ink:#edeff3; --text:#c6ccd6; --text-muted:#8990a0;
+      --accent:#7b9cff; --accent-ink:#a9bfff; --accent-soft:#1d2a4a; --good:#4fbe8d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:Georgia,"Times New Roman",serif;color:var(--ink);margin:0;}
+  .page{max-width:720px;margin:0 auto;padding:56px 24px 88px;}
+  .eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:14px;}
+  h1{font-size:clamp(1.7rem,4vw,2.2rem);font-weight:700;line-height:1.2;}
+  .meta{margin-top:12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:var(--text-muted);}
+  .lede{margin-top:20px;font-size:1.02rem;max-width:62ch;}
+  .badge{display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    background:var(--accent-soft);color:var(--accent-ink);border-radius:10px;
+    padding:10px 16px;font-weight:600;font-size:14px;}
+  .badge::before{content:"\2713";width:18px;height:18px;border-radius:50%;background:var(--good);
+    color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;flex:none;}
+  section{padding:30px 0;border-top:1px solid var(--border);}
+  h2{font-size:1.2rem;font-weight:600;margin-bottom:12px;}
+  p{margin:0 0 12px;max-width:64ch;}
+  p:last-child{margin-bottom:0;}
+  ul{margin:0 0 12px;padding-left:1.2em;max-width:62ch;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);font-weight:600;}
+  a{color:var(--accent-ink);}
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0;font-size:14.5px;}
+  .callout p{margin:0;max-width:none;}
+  footer{max-width:720px;margin:56px auto 0;padding:24px 24px 0;border-top:1px solid var(--border);
+    font-size:12.5px;color:var(--text-muted);font-family:ui-monospace,Menlo,Consolas,monospace;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="eyebrow">VOZ Mobile · Trust &amp; Safety</div>
+    <h1>Child Safety Standards</h1>
+    <div class="meta">Effective 2026-09-03 · Last updated 2026-10-08 · Applies to VOZ Mobile on Android &amp; iOS</div>
+    <p class="lede"><strong>VOZ Mobile</strong> (developer: <strong>Tuong Lam Photos</strong>) is an unofficial,
+      independently-developed client app for the
+      <a href="https://voz.vn" target="_blank" rel="noopener">voz.vn</a> discussion forum. This page
+      states our standards against child sexual abuse and exploitation (CSAE), consistent with
+      Google Play's Child Safety Standards policy.</p>
+    <span class="badge">Zero tolerance for CSAE, no exceptions</span>
+  </header>
+
+  <section>
+    <h2>Our standard: CSAE is prohibited</h2>
+    <p>VOZ Mobile <strong>prohibits child sexual abuse and exploitation (CSAE) in any form</strong>. Using the app
+      to view, post, share, request, solicit, or promote child sexual abuse material (CSAM), or to groom, sexually
+      exploit, or traffic minors, is strictly forbidden. The developer will not build, enable, or keep any feature
+      that facilitates such conduct, and will act on any CSAE concern specific to the app.</p>
+  </section>
+
+  <section>
+    <h2>What VOZ Mobile is — and isn't</h2>
+    <p>VOZ Mobile does not host, store, or operate any servers, accounts, or content. It is a
+      reading and posting client: every thread, post, image, and message a user sees is fetched
+      live from voz.vn and displayed as-is. VOZ Mobile does not cache media on any server it
+      controls — cached data lives only on the user's own device.</p>
+    <p>Content moderation, account discipline, and legal compliance for material hosted on the
+      forum are the responsibility of <strong>voz.vn</strong>, the platform that stores and serves
+      that content.</p>
+  </section>
+
+  <section>
+    <h2>In-app reporting</h2>
+    <p>Every post in VOZ Mobile carries a <strong>"Báo cáo bài viết" (Report post)</strong> action.
+      A report — with a required reason — is submitted immediately to voz.vn's own moderation
+      queue through voz.vn's native report endpoint, the same system used by voz.vn's official
+      website and moderators. This applies to any post, including suspected CSAE material.</p>
+    <div class="callout">
+      <p>Reports are not queued or reviewed by the app developer — they go directly to voz.vn's
+        moderation team, who have the authority and access to remove content and act on accounts.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Escalation and law enforcement</h2>
+    <p>Because VOZ Mobile stores no user content, the app developer has no CSAE material to
+      independently investigate or transmit. Any report of suspected child sexual abuse material
+      encountered through the app should be filed, in order of directness:</p>
+    <ul>
+      <li>Through the in-app <strong>Report post</strong> action described above (fastest — reaches
+        voz.vn's moderators directly), or</li>
+      <li>To the platform operator, voz.vn, directly, or</li>
+      <li>To the relevant national authority (e.g. NCMEC's CyberTipline for reports with a US
+        nexus, or the appropriate authority in the reporter's country).</li>
+    </ul>
+    <p>The developer of VOZ Mobile will cooperate with law enforcement and with Google regarding
+      any report specific to the app itself, to the extent of information available to an app that
+      stores no server-side user data.</p>
+  </section>
+
+  <section>
+    <h2>Contact for child safety issues</h2>
+    <p>Questions about this page, or a CSAE concern specific to the VOZ Mobile app (not to content
+      on voz.vn itself), can be sent to the developer, Tuong Lam Photos:</p>
+    <p><a href="mailto:trantuonglam@gmail.com">trantuonglam@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <span>VOZ Mobile — unofficial app, not affiliated with voz.vn's operators</span>
+    <span>Updated 2026-10-08</span>
+  </footer>
+</div>
+</body>
+</html>
